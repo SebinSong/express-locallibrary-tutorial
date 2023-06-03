@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  if alreadyExists
+    p.text-warning(style='margin-top: 20px; margin-bottom: 40px;')
+      | This author already exists.
+
+  h1 Author: #{title}
+  p DOB: #{author.lifespan}
+
+  div(style='margin-left:20px;margin-top:20px')
+    h4 Books
+
+    dl
+      each book in author_books
+        dt
+          a(href=book.url)= book.title
+        dd= book.summary
+      else
+        p This author has no books.
+
+  hr
+  p
+    a(href=author.url + '/delete') Delete author
