@@ -10,7 +10,7 @@ mongoose.set('strictQuery', false)
 dotenv.config()
 
 const {
-  DB_CONNECTION_STRING = 'mongodb+srv://sebin123:sebin123@cluster0.7at80te.mongodb.net/local_library?retryWrites=true&w=majority'
+  DB_CONNECTION_STRING
 } = process.env
 const Book = require('./models/Book')
 const Author = require('./models/Author')
